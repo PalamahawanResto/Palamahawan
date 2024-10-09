@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <a href="index.html"><img src="picture/Palamahawan logo.jpg" alt="Logo" class="logo"></a>
+   <div class="container">
+    <div class="background-image">
+        
+            
+            <div class="navbar">             
+                <div class="navbar-links">
+                    <a href="cuisine.html">Cuisine</a>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="toggleStoreLinks()">Our Store</button>
+                        <div class="dropdown-content" id="storeDropdown">
+                            <a href="gallery.html">View Gallery</a>
+                            <a href="video.html">Watch Videos</a>                          
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="toggleStoreLinks()">Contact</button>
+                        <div class="dropdown-content" id="contactDropdown">
+                            <a href="reservation.html">Information & Reservation</a>                       
+                            <a href="feedback.html">Feedback</a>
+                        </div>
+                    </div>
+                    <a href="about.html">About Us</a>                
+                </div>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu();">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+            </div>
+            
+
+
+
+            
+            <div class="Context">
+                <h1>Experience the Heart of <br> Filipino Flavor in <br> Every Bite!</h1>
+                <div class="contextbtn">
+                    <a href="cuisine.html">Our Menu</a>
+                    <a href="store.html">Our Store</a>
+                </div>
+            </div>
+
+            
+            <div class="social-icons">
+                <a href="#" onclick="playMusic(event); return false;">
+                    <img src="picture/musical-note.png" alt="Music" class="social-icon">
+                </a>
+                <audio id="music" src="music/FilipinoFoods.mp3"></audio>                
+                <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank"><img src="picture/facebook.png" alt="Facebook" class="social-icon"></a>
+                <a href="https://www.instagram.com/palamahawanrestobar?igsh=MXc3NWc4MWhlaTh2Zw==" target="_blank"><img src="picture/instagram.png" alt="Instagram" class="social-icon"></a>
+                <a href="https://youtube.com/@palamahawan?si=iG4t7BsqYS19EWAs" target="_blank"><img src="picture/youtube.png" alt="YouTube" class="social-icon"></a>
+                <a href="https://www.tiktok.com/@palamahawan?_t=8qCiH4LIeSV&_r=1" target="_blank"><img src="picture/tiktok.png" alt="TikTok" class="social-icon"></a>                   
+            </div>
+    
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Palamahawan Resto Bar. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="cuisine.html">Cuisine</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+        </div>
+ </div>
+    <script src="index.js"></script>
+</body>
+</html>
