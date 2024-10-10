@@ -1,0 +1,435 @@
+body {
+    font-family: Arial, sans-serif;
+}  
+
+
+
+.background-image {
+    background-image: url('picture/1.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh; 
+    width: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: -1; 
+    animation: change 20s infinite;
+    flex: 1; 
+} 
+
+@keyframes change{
+    0%
+    {
+        background-image: url(picture/1.jpg);
+    }
+    25%
+    {
+        background-image: url(picture/2.jpg);
+    }
+    50%
+    {
+        background-image: url(picture/3.jpg);
+    }
+    75%
+    {
+        background-image: url(picture/4.jpg);
+    }
+    100%
+    {
+        background-image: url(picture/5.jpg);
+    }
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.2); 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 0;
+}
+
+/* Logo */
+.logo {
+    height: 10%; 
+    width: auto; 
+    margin: 5px 15px; 
+    float: left; 
+    max-width: 200px; 
+}
+
+
+@media (max-width: 768px) {
+    .logo {
+        height: 8%; 
+        max-width: 150px; 
+    }
+}
+
+
+/* Navagation Bar*/
+.navbar {
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    overflow: hidden;
+    font-size: large;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.navbar a {
+    flex: 1;
+    float: right;
+    display: block;
+    color: black; 
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid black; 
+    border-radius: 20px; 
+    transition: border-color 0.3s; 
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar a:hover {
+    background-color: orange; 
+    color: black;
+    border-color: rgba(0, 0, 0, 0.5); 
+}
+
+.dropdown {
+    float: right; 
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;    
+    border: 2px solid black; 
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    background-color: transparent; 
+    color: black; 
+    margin: 0;
+    transition: border-color 0.3s; 
+    right: 50px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dropdown .dropbtn:hover {
+    background-color: orange; 
+    border-color: rgba(0, 0, 0, 0.5); 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: orange;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hamburger {
+    display: none; 
+    font-size: 30px; 
+    cursor: pointer;
+    
+}
+
+.dropdown-content {
+    display: none; 
+}
+
+.dropdown-content.active {
+    display: block; 
+}
+
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; 
+        position: absolute; 
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); 
+        z-index: 100; 
+        width: 200px; 
+    }
+
+    .navbar-links.active {
+        display: block;
+    }
+
+    .hamburger {
+        display: block; 
+        float: right; 
+        cursor: pointer; 
+        padding: 10px; 
+    }
+}
+
+
+
+
+
+
+/* Homepage Context*/
+.Context {
+    margin-left: 80px; 
+    margin-top: 250px;
+    padding-bottom: 10px;
+    font-size: 25px; 
+    position: relative; 
+    z-index: 1; 
+    text-align: left;
+    font-weight: bold;
+}
+
+.Context h1 {
+    font-size: 40px; 
+    line-height: 1.2; 
+}
+
+
+@media (max-width: 768px) {
+    .Context {
+        margin-left: 20%; 
+        margin-top: 100px; 
+        font-size: 25px;
+        text-align: left; 
+        padding: 10%;
+    }
+
+    .Context h1 {
+        font-size: 40px; 
+    }
+
+    .contextbtn {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center; 
+    }
+
+    .contextbtn a {
+        margin: 0 10px; 
+    }
+}
+
+.contextbtn a {
+    display: inline-block; 
+    color: black; 
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid black; 
+    border-radius: 20px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.contextbtn a:first-child {
+    background-color: transparent; 
+}
+
+.contextbtn a:first-child:hover {
+    background-color: orange; 
+    color: black; 
+}
+
+.contextbtn a:last-child {
+    background-color: orange; 
+    color: black; 
+}
+
+.contextbtn a:last-child:hover {
+    background-color: transparent; 
+    color: black; 
+    border: 2px solid black; 
+}.Context {
+    margin: 250px 80px 10px 80px; 
+    padding-bottom: 10px;
+    font-size: 25px; 
+    position: relative; 
+    z-index: 1; 
+    text-align: left;
+    font-weight: bold;
+}
+
+.Context h1 {
+    font-size: 40px; 
+    line-height: 1.2; 
+}
+
+@media (max-width: 768px) {
+    .Context {
+        margin: 100px 20px; 
+        font-size: 20px; 
+        text-align: center; 
+    }
+
+    .Context h1 {
+        font-size: 30px; 
+    }
+
+    .contextbtn {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .contextbtn a {
+        margin: 10px 0; 
+    }
+}
+
+.contextbtn {
+    display: inline-block;
+    justify-content: center; 
+}
+
+.contextbtn a {
+    display: inline-block; 
+    color: black; 
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid black; 
+    border-radius: 20px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.contextbtn a:first-child {
+    background-color: transparent; 
+}
+
+.contextbtn a:first-child:hover {
+    background-color: orange; 
+    color: black; 
+}
+
+.contextbtn a:last-child {
+    background-color: orange; 
+    color: black; 
+}
+
+.contextbtn a:last-child:hover {
+    background-color: transparent; 
+    color: black; 
+    border: 2px solid black; 
+}
+
+
+
+
+
+/* For Icons */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    position: fixed; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; 
+}
+
+.social-icon {
+    width: 40px; 
+    margin: 5px 0; 
+    cursor: pointer; 
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: column;
+        justify-content: center; 
+        right: 10px; 
+    }
+
+    .social-icon {
+        width: 30px;
+        margin: 5px; 
+    }
+}
+
+
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.7);   
+    padding: 20px 0;
+    width: 100%; 
+    z-index: 5; 
+    margin-top: 13%; /*daw probelima ni ay?*/
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    flex-direction: column;
+}
+
+.footer-content {
+    max-width: 1200px;
+    text-align: center;  
+  
+}
+
+.footer p {
+    margin: 0;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center; 
+}
+
+.footer-links a {
+    text-align: center;
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: orange;
+}
+
+@media (max-width: 768px) {
+    .footer p {
+        font-size: 14px; 
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
