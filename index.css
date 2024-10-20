@@ -324,7 +324,7 @@ body {
     .social-icons {
         flex-direction: column;
         justify-content: center; 
-        right: 2%; 
+        right: 5%; 
         padding: 2px;
     }
 
