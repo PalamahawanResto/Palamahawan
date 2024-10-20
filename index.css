@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0; /* Remove default margins */
+    padding: 0;
 }  
 
 
@@ -321,7 +324,7 @@ body {
     .social-icons {
         flex-direction: column;
         justify-content: center; 
-        right: .5%; 
+        right: 1.5%; 
         padding: 4px;
     }
 
@@ -440,7 +443,6 @@ body {
     align-items: center; 
     text-align: center;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 3%;
     z-index: 1;
 }
 
@@ -523,35 +525,41 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    margin: 20px auto;
-   align-items: center;
+    margin: 10% auto;
+    padding: 0 20px; 
+    align-items: center;
+  
 }
 
 .section {
-    display: flex; /* Align items in each section */
-    justify-content: space-between; /* Space between image and content */
-    margin-bottom: 40px; /* Space between sections */
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    margin-bottom: 40px;
+    width: 100%;
+
 }
 
 .resto-photo {
-    flex: 1; /* Takes up 1 part of the available space */
+    flex: 1; 
     padding: 20px;
     text-align: center;
-
+    max-width: 100%;
 }
 
 .resto-image {
-    width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains aspect ratio */
+    width: 100%; 
+    height: auto; 
     max-width: 400px;
-    border-radius: 10px; /* Adds rounded corners */
+    border-radius: 10px;
     text-align: center;
 }
 
 .contentabout {
-    flex: 2; /* Takes up 2 parts of the available space */
+    flex: 2; 
     padding: 20px;
     text-align: center;
+    max-width: 100%;
 }
 
 .contentabout h1 {
@@ -570,10 +578,228 @@ body {
     margin-bottom: 15px;
 }
 
-/* Responsive adjustments */
+/* Responsive about */
 @media (max-width: 768px) {
+    .aboutcontainer {
+        margin: 10% auto; 
+        padding: 0 10px; 
+        width: 90%;
+    }
+
     .section {
-        flex-direction: column; /* Stack content vertically on small screens */
-        align-items: center; /* Center align content */
+        flex-direction: column; 
+        align-items: center;
+       
+    }
+
+    .resto-photo,
+    .contentabout {     
+        width: 90%;
+        margin: 10px 0; 
     }
 }
+
+
+
+
+/* For my Reservation page*/
+.reservation-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 5%; 
+}
+
+.contact-info {
+    flex: 1; 
+    margin-right: 20px; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.reservation-form {
+    flex: 2; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label {
+    margin-top: 10px;
+}
+
+.reservation-form input{
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+}
+
+.reservation-form textarea{
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: orange;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.reservation-form button:hover {
+    background-color: darkorange; 
+}
+
+@media (max-width: 768px) {
+    .reservation-container {
+        flex-direction: column;
+        margin: 7% auto;
+        margin-top: 10%;
+        width: 90%;
+    }
+
+    .contact-info {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        margin-top: 7%;
+    }
+
+    .reservation-form {
+        margin-right: 0;
+    }
+
+    .reservation-form h2 {
+        font-size: 24px; 
+    }
+
+    .contact-info h2{
+        font-size: 24px; 
+    }
+
+    .reservation-form label,
+    .reservation-form input,
+    .reservation-form textarea {
+        font-size: 16px; 
+    }
+
+    .reservation-form button {
+        font-size: 16px; 
+    }
+}
+
+.contact-info img {
+    width: 20%; 
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle; 
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.contact-info img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* For my Feedbackpage*/
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    max-width: 900px; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 10% auto;
+}
+
+.form-content {
+    width: 100%; 
+    text-align: center; 
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+}
+
+.form-group textarea{
+    width: 90%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+}
+
+.form-content button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-content button:hover {
+    background-color: darkorange;
+    transform: scale(1.1);
+}
+
+/* Responsive feedback */
+@media (max-width: 768px) {
+    .feedback-container {
+        margin: 20% 10px; 
+        padding: 15px;
+        width: 85%;      
+    }
+   
+    .feedback-container h1 {
+        display: none;
+    }
+
+    button {
+        width: 100%; 
+    }
+}
+
+

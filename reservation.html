@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <a href="index.html"><img src="picture/Palamahawan logo.jpg" alt="Logo" class="logo"></a>
+    <div class="container">
+        <div class="navbar">             
+            <div class="navbar-links">
+                <a href="cuisine.html">Cuisine</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleStoreLinks()">Our Store</button>
+                    <div class="dropdown-content" id="storeDropdown">
+                        <a href="gallery.html">View Gallery</a>
+                        <a href="video.html">Watch Videos</a>                          
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="toggleStoreLinks()">Contact</button>
+                    <div class="dropdown-content" id="contactDropdown">
+                        <a href="reservation.html">Reservation</a>                       
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </div>
+                <a href="about.html">About Us</a>                
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu();">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+        </div>
+
+        <div class="reservation-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Phone: 0907-834-1275</p>
+                <p>Email: palamahawan@palamahawan.com</p>
+                <p>palamahawanrestobar@palamahawan.com</p>
+                <p>Address: Sito Nipa, Brgy. Culasi, Roxas City, Capiz, 5800</p>
+                <p>Opening Hours: 10 AM - 10 PM</p>
+                <h1>Contact us here:</h1>
+                <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank">
+                    <img src="picture/facebook.png" alt="Facebook">
+                </a>
+
+            </div>
+
+            <div class="reservation-form">
+                <h2>Reservation Form</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                    
+                    <label for="guests">Number of Guests:</label>
+                    <input type="number" id="guests" name="guests" min="1" required placeholder="Number of Guests">
+                    
+                    <label for="special-requests">Special Requests:</label>
+                    <textarea id="special-requests" name="special-requests" placeholder="Your Requests..."></textarea>
+                    
+                    <button type="submit">Reserve</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="#" onclick="playMusic(event); return false;">
+            <img src="picture/musical-note.png" alt="Music" class="social-icon">
+        </a>
+        <audio id="music" src="music/FilipinoFoods.mp3"></audio>                
+        <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank"><img src="picture/facebook.png" alt="Facebook" class="social-icon"></a>
+        <a href="https://www.instagram.com/palamahawanrestobar?igsh=MXc3NWc4MWhlaTh2Zw==" target="_blank"><img src="picture/instagram.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://youtube.com/@palamahawan?si=iG4t7BsqYS19EWAs" target="_blank"><img src="picture/youtube.png" alt="YouTube" class="social-icon"></a>
+        <a href="https://www.tiktok.com/@palamahawan?_t=8qCiH4LIeSV&_r=1" target="_blank"><img src="picture/tiktok.png" alt="TikTok" class="social-icon"></a>                   
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">                   
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="cuisine.html">Cuisine</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <p>Sito Nipa, Brgy. Culasi, Roxas City, Capiz, 5800</p>                  
+            <div class="socialicons-footer">
+                <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank"><img src="picture/facebook.png" alt="Facebook" class="socialicon"></a>
+                <a href="https://www.instagram.com/palamahawanrestobar" target="_blank"><img src="picture/instagram.png" alt="Instagram" class="socialicon"></a>
+                <a href="https://youtube.com/@palamahawan" target="_blank"><img src="picture/youtube.png" alt="YouTube" class="socialicon"></a>
+                <a href="https://www.tiktok.com/@palamahawan" target="_blank"><img src="picture/tiktok.png" alt="TikTok" class="socialicon"></a>
+            </div>
+            <p class="copyright">Copyright &copy; 2024 Palamahawan Resto Bar. <br>All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+</html>
