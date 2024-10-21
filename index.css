@@ -70,11 +70,11 @@ body {
 
 /* Logo */
 .logo {
-    height: 8%; 
+    height: 10%; 
     width: auto; 
     margin: 5px 15px; 
     float: left; 
-    max-width: 130px; 
+    max-width: 170px; 
 }
 
 /* Responsive of Logo*/
@@ -304,9 +304,11 @@ body {
     transform: translateY(-50%); 
     background: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10; 
+    overflow-x: auto; /* diri ma edit*/
+    max-height: 80vh;
 }
 
 .social-icon {
@@ -803,3 +805,32 @@ h2 {
 }
 
 
+
+
+/* For my Video Page*/
+.video-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding-top: 2%;
+}
+
+
+.video-item p {
+    padding: 10px;
+    font-size: 16px;
+}
