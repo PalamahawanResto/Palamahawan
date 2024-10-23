@@ -64,6 +64,29 @@ window.onload = function() {
 };
 
 
+// For my Gallery Page
+// Ini is for X sng pics
+function openModal(element) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
 
+    modal.style.display = "flex";
+    modalImage.src = element.querySelector("img").src;
+}
 
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
 
+// Ini Gina Filter ang gallery
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
