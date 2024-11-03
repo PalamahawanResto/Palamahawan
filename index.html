@@ -5,46 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="index.css">
+
+    
 </head>
 <body>
-    <a href="index.html"><img src="picture/NewLogo1.png" alt="Logo" class="logo"></a>
+   
+    <nav>
+        <a href="index.html"><img src="picture/palamahawan1.png" alt="Logo" class="logo"></a>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu();">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        
+        
+        <div class="navbar">
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="reservation.html">Contact</a>
+                <a href="cuisine.html">Cuisine</a>
+                <a href="store.html">Our Store</a>            
+            </div>           
+        </div>
+        
+    </nav>
+
+   
+    
    <div class="container">
     <div class="background-image">
-        
-            
-            <div class="navbar">             
-                <div class="navbar-links">
-                    <a href="cuisine.html">Cuisine</a>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="toggleStoreLinks()">Our Store</button>
-                        <div class="dropdown-content" id="storeDropdown">
-                            <a href="gallery.html">View Gallery</a>
-                            <a href="video.html">Watch Videos</a>                          
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="toggleStoreLinks()">Contact</button>
-                        <div class="dropdown-content" id="contactDropdown">
-                            <a href="reservation.html">Reservation</a>                       
-                            <a href="feedback.html">Feedback</a>
-                        </div>
-                    </div>
-                    <a href="about.html">About Us</a>                
-                </div>
-                <div class="hamburger" id="hamburger" onclick="toggleMenu();">
-                    &#9776; <!-- Hamburger icon -->
-                </div>
-            </div>
-            
-
-
-
             
             <div class="Context">
                 <h1>Experience the Heart of <br> Filipino Flavor in <br> Every Bite!</h1>
                 <div class="contextbtn">
                     <a href="cuisine.html">Our Menu</a>
-                    <a href="store.html">Our Store</a>
+                    <a href="about.html">About Us</a>
                 </div>
             </div>
  
@@ -61,12 +55,18 @@
             </div>
             
             <div class="thumbnails">
-                <img src="picture/1.jpg" alt="Thumbnail 1" onclick="changeBackground('picture/1.jpg')" class="thumbnail">
-                <img src="picture/2.jpg" alt="Thumbnail 2" onclick="changeBackground('picture/2.jpg')" class="thumbnail">
-                <img src="picture/3.jpg" alt="Thumbnail 3" onclick="changeBackground('picture/3.jpg')" class="thumbnail">
-                <img src="picture/4.jpg" alt="Thumbnail 4" onclick="changeBackground('picture/4.jpg')" class="thumbnail">
-                <img src="picture/5.jpg" alt="Thumbnail 5" onclick="changeBackground('picture/5.jpg')" class="thumbnail">              
+                <img src="picture/5.jpg" alt="Thumbnail 1" onclick="changeBackground(this)" class="thumbnail" 
+                     data-small="picture/5.4.png" data-large="picture/5.3.png">
+                <img src="picture/4.jpg" alt="Thumbnail 2" onclick="changeBackground(this)" class="thumbnail" 
+                     data-small="picture/4.4.png" data-large="picture/4.3.png">
+                <img src="picture/1.jpg" alt="Thumbnail 3" onclick="changeBackground(this)" class="thumbnail" 
+                     data-small="picture/1.4.png" data-large="picture/1.3.png">
+                <img src="picture/2.jpg" alt="Thumbnail 4" onclick="changeBackground(this)" class="thumbnail" 
+                     data-small="picture/2.4.png" data-large="picture/2.3.png">
+                <img src="picture/3.jpg" alt="Thumbnail 5" onclick="changeBackground(this)" class="thumbnail" 
+                     data-small="picture/3.4.png" data-large="picture/3.3.png">              
             </div>
+            
             
 
 

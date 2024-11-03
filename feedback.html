@@ -7,60 +7,57 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <a href="index.html"><img src="picture/NewLogo1.png" alt="Logo" class="logo"></a>
-   <div class="container">
-           
-            <div class="navbar">             
-                <div class="navbar-links">
-                    <a href="cuisine.html">Cuisine</a>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="toggleStoreLinks()">Our Store</button>
-                        <div class="dropdown-content" id="storeDropdown">
-                            <a href="gallery.html">View Gallery</a>
-                            <a href="video.html">Watch Videos</a>                          
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="toggleStoreLinks()">Contact</button>
-                        <div class="dropdown-content" id="contactDropdown">
-                            <a href="reservation.html">Reservation</a>                       
-                            <a href="feedback.html">Feedback</a>
-                        </div>
-                    </div>
-                    <a href="about.html">About Us</a>                
-                </div>
-                <div class="hamburger" id="hamburger" onclick="toggleMenu();">
-                    &#9776; <!-- Hamburger icon -->
-                </div>
-            </div>
-            
- </div>
+    <nav>
+        <a href="index.html"><img src="picture/palamahawan1.png" alt="Logo" class="logo"></a>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu();">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <div class="navbar">
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="reservation.html">Contact</a>
+                <a href="cuisine.html">Cuisine</a>
+                <a href="store.html">Our Store</a>            
+            </div>          
+        </div>
+    </nav>
           
-                <div class="feedback-container">
-                    <h1>Feedback Form</h1>
-                    <div class="form-content">
-                        <h2>We Value Your Feedback!</h2>
-                        <form action="submit_feedback.php" method="POST">
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" required placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required placeholder="Enter your email">
-                            </div>
-                            <div class="form-group">
-                                <label for="feedback">Your Feedback:</label>
-                                <textarea id="feedback" name="feedback" rows="5" required placeholder="Your feedback..."></textarea>
-                            </div>
-                           <!-- <div class="form-group">
-                                <label for="image">Upload Image:</label>
-                                <input type="file" id="image" name="image" accept="image/*">
-                            </div>-->
-                            <button type="submit">Submit Feedback</button>
-                        </form>
-                    </div>
-                </div>
+ <div class="feedback-container">
+    <h1>Feedback Form</h1>
+    <div class="form-content">
+        <h2>We Value Your Feedback!</h2>
+        <form id="feedbackForm" action="submit_feedback.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="5" required placeholder="Your feedback..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" multiple>
+            </div>
+            <div class="form-group">
+                <label for="video">Upload Video:</label>
+                <input type="file" id="video" name="video" accept="video/*">
+            </div>
+            <button type="submit">Submit Feedback</button>
+              </form>
+       
+    </div>
+</div> 
+
+<button class="show-feedback-btn">Show Feedback</button>
+                <div id="feedbackList" style="display:none;"></div>
+              
+
 
 
 
@@ -87,5 +84,8 @@
        
 
     <script src="index.js"></script>
+
+    
+
 </body>
 </html>

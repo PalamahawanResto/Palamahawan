@@ -7,31 +7,21 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <a href="index.html"><img src="picture/NewLogo1.png" alt="Logo" class="logo"></a>
-    <div class="container">
-        <div class="navbar">             
-            <div class="navbar-links">
-                <a href="cuisine.html">Cuisine</a>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="toggleStoreLinks()">Our Store</button>
-                    <div class="dropdown-content" id="storeDropdown">
-                        <a href="gallery.html">View Gallery</a>
-                        <a href="video.html">Watch Videos</a>                          
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="toggleStoreLinks()">Contact</button>
-                    <div class="dropdown-content" id="contactDropdown">
-                        <a href="reservation.html">Reservation</a>                       
-                        <a href="feedback.html">Feedback</a>
-                    </div>
-                </div>
-                <a href="about.html">About Us</a>                
-            </div>
-            <div class="hamburger" id="hamburger" onclick="toggleMenu();">
-                &#9776; <!-- Hamburger icon -->
-            </div>
+    <nav>
+        <a href="index.html"><img src="picture/palamahawan1.png" alt="Logo" class="logo"></a>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu();">
+            &#9776; <!-- Hamburger icon -->
         </div>
+        <div class="navbar">
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="reservation.html">Contact</a>
+                <a href="cuisine.html">Cuisine</a>
+                <a href="store.html">Our Store</a>            
+            </div>           
+        </div>
+    </nav>
 
         <div class="reservation-container">
             <div class="contact-info">
@@ -45,7 +35,8 @@
                 <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank">
                     <img src="picture/facebook.png" alt="Facebook">
                 </a>
-
+                <h2>Want to give us Feedback?</h2>
+                <a href="feedback.html" >Click here</a>
             </div>
 
             <div class="reservation-form">

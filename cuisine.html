@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Cuisine</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -19,36 +19,42 @@
                 <a href="reservation.html">Contact</a>
                 <a href="cuisine.html">Cuisine</a>
                 <a href="store.html">Our Store</a>            
-            </div>        
+            </div>         
         </div>
     </nav>
-    
-            <div class="aboutcontainer">
-            <div class="section">
-                <div class="resto-photo">
-                    <img src="picture/4.1.jpg" alt="Resto" class="resto-image">
-                </div>
-                <div class="contentabout">
-                    <h1>About Us</h1>
-                    <p>Welcome to Palamahawan Resto Bar! Our mission is to share the rich culinary traditions of the Philippines with our beloved community. Our owner, Jasmin Hanusiak, has dedicated their life to perfecting the art of Filipino cuisine.</p>
-                    <p>With a passion for cooking and a love for family gatherings, our dishes are crafted from traditional recipes using fresh, local ingredients. We invite you to experience the warmth of Filipino hospitality and the joy of sharing a meal with loved ones.</p>
-                    
-                </div>
-            </div>
 
-                <div class="section">
-                    <div class="contentabout">
-                        <h2>Our Story</h2>
-                    <!--<p>[Add more details about the restaurant, its history, and what makes it unique.]</p>-->
-                    <p>Palamahawan Resto Bar was born from a dream nurtured by our founder, whose passion for Filipino cuisine inspired the creation of this vibrant dining space. With deep roots in the rich culinary traditions of the Philippines, our founder wanted to share the joy of authentic Filipino dishes with the community.</p>
-                    <p>Leading the restaurant is Jasmin Hanusiak, our dedicated operations manager. With a commitment to excellence and a love for Filipino culture, Jasmin ensures that every dish served reflects our values of quality, tradition, and hospitality. Under her guidance, we craft each recipe using fresh, locally sourced ingredients, creating a warm and welcoming atmosphere where families and friends can gather.</p>
-                    <p>At Palamahawan, we believe that food is not just about sustenance; it’s about connection, love, and sharing experiences. We invite you to be a part of our story, to savor our dishes, and to create memories that will last a lifetime.</p>
+                    <div class="menu-container">
+                        <h1>Our Menu</h1>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <img src="picture/4.jpg" alt="Menu Item 1" class="menu-image">
+                                    <h2>Menu Item 1</h2>
+                                    <p>Description of Menu Item 1</p>
+                                </div>
+                                <div class="menu-item">
+                                    <img src="picture/2.jpg" alt="Menu Item 2" class="menu-image">
+                                    <h2>Menu Item 2</h2>
+                                    <p>Description of Menu Item 2</p>
+                                </div>
+                                <div class="menu-item">
+                                    <img src="picture/3.jpg" alt="Menu Item 3" class="menu-image">
+                                    <h2>Menu Item 3</h2>
+                                    <p>Description of Menu Item 3</p>
+                                </div>
+                                <!-- Add more menu items as needed -->
+                             </div>
                     </div>
-                    <div class="resto-photo">
-                        <img src="picture/jisoo.jpg" alt="Owner" class="resto-image">
+                    
+                    <div class="cuisine-modal" id="cuisineModal">
+                        <span class="close" onclick="closeCuisineModal()">&times;</span>
+                        <div class="cuisine-modal-content">
+                            <img id="cuisineModalImage" src="" alt="Cuisine Image">
+                        </div>
                     </div>
-                </div>
-            </div>
+                    
+                    
+                    
+                    
 
             <div class="social-icons">
                 <a href="#" onclick="playMusic(event); return false;">
