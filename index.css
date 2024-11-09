@@ -138,6 +138,7 @@ body {
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.5);
     border-color: orange;
+    color: orange;
 }
 
 
@@ -248,7 +249,7 @@ body {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    border: 2px solid black; 
+    border: 2px solid orange; 
     border-radius: 20px; 
     transition: background-color 0.3s, color 0.3s; 
 }
@@ -270,7 +271,7 @@ body {
 .contextbtn a:last-child:hover {
     background-color: transparent; 
     color: black; 
-    border: 2px solid black; 
+    border: 2px solid orange; 
 }
 
 
@@ -287,8 +288,15 @@ body {
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10; 
-    overflow-x: auto; /* diri ma edit*/
+    overflow-x: auto;
     max-height: 80vh;
+    overflow: visible; /* Allow overflow of tooltips */
+}
+
+.social-icon-container {
+    position: relative; /* Make this the reference point for the tooltip */
+    display: inline-block;
+ 
 }
 
 .social-icon {
@@ -301,7 +309,31 @@ body {
     transform: scale(1.1);
 }
 
-/* responsive of icons*/
+/* Tooltip Styles */
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    right: 100%; /* Position the tooltip to the left of the icon */
+    transform: translateY(-50%); /* Center it vertically */
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap; /* Prevents text wrapping */
+    z-index: 1;
+}
+
+.social-icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .social-icons {
         flex-direction: column;
@@ -314,7 +346,12 @@ body {
         width: 30px;
         margin: 5px; 
     }
+
+    .tooltip {
+        font-size: 10px;
+    }
 }
+
 
 
 /* For the Pic in Homepage*/
@@ -526,7 +563,7 @@ body {
 
 
 /* For my Reservation page*/
-.reservation-container {
+.contact-container {
     display: flex;
     justify-content: space-between;
     margin: 10% 5%; 
@@ -541,7 +578,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-.reservation-form {
+.contact-form {
     flex: 2; 
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -549,30 +586,30 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-.reservation-form form {
+.contact-form form {
     display: flex;
     flex-direction: column;
 }
 
-.reservation-form label {
+.contact-form label {
     margin-top: 10px;
 }
 
-.reservation-form input{
+.contact-form input{
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px; 
 }
 
-.reservation-form textarea{
+.contact-form textarea{
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.reservation-form button {
+.contact-form button {
     margin-top: 20px;
     padding: 10px;
     background-color: orange;
@@ -583,12 +620,12 @@ body {
     transition: background-color 0.3s;
 }
 
-.reservation-form button:hover {
+.contact-form button:hover {
     background-color: darkorange; 
 }
 
 @media (max-width: 768px) {
-    .reservation-container {
+    .contact-container {
         flex-direction: column;
         margin: 7% auto;
         margin-top: 10%;
@@ -601,11 +638,11 @@ body {
         margin-top: 7%;
     }
 
-    .reservation-form {
+    .contact-form {
         margin-right: 0;
     }
 
-    .reservation-form h2 {
+    .contact-form h2 {
         font-size: 24px; 
     }
 
@@ -613,13 +650,13 @@ body {
         font-size: 24px; 
     }
 
-    .reservation-form label,
-    .reservation-form input,
-    .reservation-form textarea {
+    .contact-form label,
+    .contact-form input,
+    .contact-form textarea {
         font-size: 16px; 
     }
 
-    .reservation-form button {
+    .contact-form button {
         font-size: 16px; 
     }
 }
@@ -644,11 +681,12 @@ body {
 
 
 /* For my Feedbackpage*/
+/* Overall Feedback Form Styling */
 .feedback-container {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    max-width: 900px; 
+    align-items: center;
+    max-width: 900px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
@@ -658,8 +696,8 @@ body {
 }
 
 .form-content {
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
 }
 
 h2 {
@@ -676,20 +714,13 @@ h2 {
     font-weight: bold;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px; 
-}
-
-.form-group textarea{
-    width: 90%; 
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px; 
+    font-size: 16px;
 }
 
 .form-content button {
@@ -708,55 +739,52 @@ h2 {
     transform: scale(1.1);
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
 .form-group input[type="file"] {
     padding: 10px;
     margin-top: 5px;
 }
 
+/* Button to Show Feedback Section */
 .show-feedback-btn {
-    display: block; /* Make the button a block element */
-    width: 200px; /* Set a width for the button */
-    margin: 0 auto; /* Center it */
-    padding: 10px 20px; 
-    background-color: orange; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     margin-bottom: 5%;
 }
 
 .show-feedback-btn:hover {
-    background-color: darkorange; /* Darken button on hover */
+    background-color: darkorange;
     transform: scale(1.1);
 }
 
-
-/* Responsive feedback */
+/* Responsive Feedback Form for Mobile Devices */
 @media (max-width: 768px) {
     .feedback-container {
-        margin: 20% 10px; 
-        margin-bottom: 5%;
+        margin: 20% 10px;
         padding: 15px;
-        width: 85%;      
+        width: 85%;
     }
-   
+
     .feedback-container h1 {
         display: none;
     }
 
-    .feedback-container button {
-        width: 40%; 
+    .form-content button {
+        width: 40%;
     }
+
     .show-feedback-btn {
         margin: 4% auto;
     }
 }
+
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -19,42 +19,52 @@
                 <a href="contact.html">Contact</a>
                 <a href="cuisine.html">Cuisine</a>
                 <a href="store.html">Our Store</a>            
-            </div>          
+            </div>           
         </div>
     </nav>
-          
-    <div class="feedback-container">
-     
-        <div class="form-content">
-            <h2>We Value Your Feedback!</h2>
-            <form id="feedbackForm" action="submit_feedback.php" method="POST" enctype="multipart/form-data" onsubmit="submitFeedback(event)">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label for="feedback">Your Feedback:</label>
-                    <textarea id="feedback" name="feedback" rows="5" required placeholder="Your feedback..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="image">Upload Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*" multiple>
-                </div>
-                <div class="form-group">
-                    <label for="video">Upload Video:</label>
-                    <input type="file" id="video" name="video" accept="video/*">
-                </div>
-                <button type="submit">Submit Feedback</button>
-            </form>
-        </div>
-    </div> 
 
-    <button class="show-feedback-btn" onclick="showFeedback()">Show Feedback</button>
-    <div id="feedbackList" style="display:none;"></div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Phone: 0907-834-1275</p>
+                <p>Email: palamahawan@palamahawan.com</p>
+                <p>palamahawanrestobar@palamahawan.com</p>
+                <p>Address: Sito Nipa, Brgy. Culasi, Roxas City, Capiz, 5800</p>
+                <p>Opening Hours: 8 AM - 10 PM</p>
+                <h1>Contact us here:</h1>
+                <a href="https://www.facebook.com/PalamahawanRestoBar" target="_blank">
+                    <img src="picture/facebook.png" alt="Facebook">
+                </a>
+                <h2>Want to give us Feedback?</h2>
+                <a href="feedback.html" >Click here</a>
+            </div>
+
+            <div class="contact-form">
+                <form action="/submit-contact-form" method="post">
+             <!--  <h2>Contact Form</h2> --> 
+                <form>                    
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+                    <label for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                    <label for="subject">Subject (Optional)</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject of your message">
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    
+
+
 
     <footer class="footer">
         <div class="footer-content">                   
@@ -74,7 +84,7 @@
             <p class="copyright">Copyright &copy; 2024 Palamahawan Resto Bar. <br>All rights reserved.</p>
         </div>
     </footer>
-
+    
     <script src="index.js"></script>
 </body>
 </html>

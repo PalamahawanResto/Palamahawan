@@ -10,6 +10,8 @@ function playMusic(event) {
     }
 }
 
+
+
 // For Hamburger Menu
 function toggleMenu() {
     const links = document.querySelector('.navbar-links');
@@ -107,6 +109,7 @@ menuItems.forEach(item => {
 
 
 // pop up for submit feedback
+// Function to handle feedback form submission
 function submitFeedback(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -130,4 +133,9 @@ function submitFeedback(event) {
     });
 }
 
+// Toggle feedback visibility
+function showFeedback() {
+    const feedbackList = document.getElementById('feedbackList');
+    feedbackList.style.display = feedbackList.style.display === 'none' ? 'block' : 'none';
+}
 
