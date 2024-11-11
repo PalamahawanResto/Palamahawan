@@ -114,7 +114,7 @@ body {
     font-weight: bold;
     padding-top: 10px;
     margin-right: 2%;
-   
+    
 }
 
 .navbar-links {
@@ -133,12 +133,13 @@ body {
     position: relative; 
     border-bottom: 5px solid transparent; /* Add transparent bottom border */
     transition: border-color 0.3s ease; /* Smooth transition for the border */
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+.navbar a:hover {  
     border-color: orange;
-    color: orange;
+    color: darkorange;
 }
 
 
@@ -201,18 +202,22 @@ body {
 
 
 /* Homepage Context*/
+
+
 .Context {
-    margin: 250px 150px 10px 150px; 
-    padding-bottom: 10px;
+    margin: 190px ; 
+    margin-top: 270px;
+    padding-bottom: 20px;
     font-size: 25px; 
     position: relative; 
     z-index: 1; 
     text-align: left;
     font-weight: bold;
+    
 }
 
 .Context h1 {
-    font-size: 50px; 
+    font-size: 60px; 
     line-height: 1.2; 
 }
 
@@ -249,7 +254,7 @@ body {
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-    border: 2px solid orange; 
+    border: 1px solid orange; 
     border-radius: 20px; 
     transition: background-color 0.3s, color 0.3s; 
 }
@@ -264,7 +269,7 @@ body {
 }
 
 .contextbtn a:last-child {
-    background-color: orange; 
+    background-color: darkorange; 
     color: black; 
 }
 
