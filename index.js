@@ -10,132 +10,84 @@ function playMusic(event) {
     }
 }
 
+// Toggle the hamburger icon and the full-screen menu
+document.getElementById('hamburger-icon').addEventListener('click', function() {
+    const menu = document.getElementById('full-screen-menu');
+    const hamburger = document.getElementById('hamburger-icon');
 
+    // Toggle the full-screen menu visibility by toggling the 'active' class
+    menu.classList.toggle('active');
 
-// For Hamburger Menu
-function toggleMenu() {
-    const links = document.querySelector('.navbar-links');
-    links.classList.toggle('active'); 
-}
+    // Toggle the hamburger icon state (open/close)
+    hamburger.classList.toggle('open');
+});
 
-
-
-
-// For homepage Picture background
-function changeBackground(thumbnail) {
-    const background = document.querySelector('.background-image');
-    const isSmallScreen = window.innerWidth <= 768; // Check for small screen
-    const image = isSmallScreen ? thumbnail.dataset.small : thumbnail.dataset.large;
-
-    isAnimating = false;
-    background.style.animation = 'none';
-    background.style.backgroundImage = `url(${image})`;
-
-    setTimeout(() => {
-        background.style.animation = '5s'; // Time nga magpadayon ang animation
-        isAnimating = true; // Allow animations again
-    }, 50);
-}
-
-
-// Slideshow logic
-function startSlideshow() {
-    setInterval(() => {
-        if (isAnimating) {
-            currentIndex = (currentIndex + 1) % images.length;
-            changeBackground(images[currentIndex]);
-        }
-    }, 5000); // Change every 5 seconds / 5k equavalent sng 5sec.
-}
-
-window.onload = function() {
-    startSlideshow(); // Start the slideshow when the page loads
-};
-
-
-
-
-
-// For my Gallery Page
-// Ini is for X sng pics
-function openModal(element) {
-    const modal = document.getElementById("modal");
-    const modalImage = document.getElementById("modalImage");
-
-    modal.style.display = "flex";
-    modalImage.src = element.querySelector("img").src;
-}
-
-function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
-}
-
-// Ini Gina Filter ang gallery / Gina categorized
-function filterGallery(category) {
-    const items = document.querySelectorAll('.gallery-item');
-    items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
+// If you want to close the menu when a link is clicked
+const menuLinks = document.querySelectorAll('.full-screen-menu a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Close the menu after clicking a link
+        document.getElementById('full-screen-menu').classList.remove('active');
+        document.getElementById('hamburger-icon').classList.remove('open');
     });
-}
-
-// ini is for cuisine
-// Open the Cuisine Modal
-function openCuisineModal(element) {
-    const modal = document.getElementById("cuisineModal");
-    const modalImage = document.getElementById("cuisineModalImage");
-
-    modal.style.display = "flex";
-    modalImage.src = element.querySelector("img").src; 
-}
-
-// Close the Cuisine Modal
-function closeCuisineModal() {
-    const modal = document.getElementById("cuisineModal");
-    modal.style.display = "none";
-}
-
-// Open modal when a menu item is clicked
-const menuItems = document.querySelectorAll('.menu-item');
-menuItems.forEach(item => {
-    item.addEventListener('click', () => openCuisineModal(item));
 });
 
 
 
 
-// pop up for submit feedback
-// Function to handle feedback form submission
-function submitFeedback(event) {
-    event.preventDefault(); // Prevent default form submission
 
-    const formData = new FormData(document.getElementById('feedbackForm'));
+// Get all the images, modal elements, and buttons
+const images = document.querySelectorAll('.cuisine-item img');
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.getElementById('closeModal');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
 
-    fetch('submit_feedback.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            alert(data.message); // Show success message
-            document.getElementById('feedbackForm').reset(); // Reset form
-        } else {
-            alert('Error: ' + data.message); // Show error message
-        }
-    })
-    .catch(error => {
-        alert('Error: ' + error.message); // Show error
-    });
+let currentIndex = 0;  // Track the current image index
+
+// Open modal and display the clicked image
+function openModal(index) {
+    currentIndex = index;  // Set current image index
+    modal.style.display = 'flex';
+    modalImage.src = images[index].src;  // Set the full image source
 }
 
-// Toggle feedback visibility
-function showFeedback() {
-    const feedbackList = document.getElementById('feedbackList');
-    feedbackList.style.display = feedbackList.style.display === 'none' ? 'block' : 'none';
+// Close the modal
+function closeImageModal() {
+    modal.style.display = 'none';
 }
+
+// Show the previous image
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;  // Wrap to the last image if needed
+    modalImage.src = images[currentIndex].src;
+}
+
+// Show the next image
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;  // Wrap to the first image if needed
+    modalImage.src = images[currentIndex].src;
+}
+
+// Add event listener for each image to open modal
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openModal(index));
+});
+
+// Add event listeners for modal navigation buttons
+closeModal.addEventListener('click', closeImageModal);
+prevButton.addEventListener('click', showPrevImage);
+nextButton.addEventListener('click', showNextImage);
+
+// Close the modal if clicked outside the image
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeImageModal();
+    }
+});
+
+
+
+
 
