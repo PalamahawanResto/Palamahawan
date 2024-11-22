@@ -90,4 +90,57 @@ window.addEventListener('click', (event) => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.slider-images img');
+    const dotsContainer = document.querySelector('.dot-indicators');
+    let currentIndex = 0;
+
+    // Create dots for each image
+    images.forEach((image, index) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => goToSlide(index)); // You can still click dots to navigate manually
+        dotsContainer.appendChild(dot);
+    });
+
+    // Set the first dot as active
+    updateDots();
+
+    // Show the first image
+    images[0].classList.add('active'); // Show the first image initially
+
+    // Function to go to the slide
+    function goToSlide(index) {
+        currentIndex = index;
+        const newTransformValue = `translateX(-${100 * currentIndex}%)`;
+        document.querySelector('.slider-images').style.transform = newTransformValue;
+
+        // Update the active image
+        updateActiveImage();
+        updateDots();
+    }
+
+    // Function to update the active image (visible image)
+    function updateActiveImage() {
+        images.forEach((image, index) => {
+            if (index === currentIndex) {
+                image.classList.add('active'); // Add the active class to the current image
+            } else {
+                image.classList.remove('active'); // Remove the active class from other images
+            }
+        });
+    }
+
+    // Function to update the active dot
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot-indicators span');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    // Auto slide images every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        goToSlide(currentIndex);
+    }, 5000); // Change slide every 5 seconds
+});
 

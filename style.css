@@ -206,20 +206,113 @@ span{
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
-    color: darkorange;
+    color: #FF6D00;
 }
-.home img{
-    border-radius: 50%;
-    
-}
-.home-img img{
+.home-img {
     position: relative;
-    top: 3rem;
-    width:32vw;
+    margin-top: 5%;
+    width: 50%; /* Adjust the width of the image container */
+    height: auto;
+    overflow: hidden;
+    margin-left: auto; /* Push it to the right side of the page */
+    display: flex;
+    justify-content: flex-end; /* Ensure it aligns to the right side */
+    align-items: center; /* Center vertically if needed */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.slider-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}
+
+.slider-images img.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
+}
+
+.dot-indicators {
+    position: absolute;
+    bottom: 0px; /* Position the dots below the image */
+    left: 50%;
+    transform: translateX(-50%); /* Center the dots */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add space between dots */
+}
+
+.dot-indicators span {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.4s ease-in-out;
+    transition: background-color 0.3s;
 }
+
+.dot-indicators span.active {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+    .home-img {
+        width: 100%; /* Full width of the screen for smaller devices */
+        justify-content: center; /* Center the images in smaller screens */
+    }
+
+    .slider-container {
+        width: 90%; /* Slightly reduced width for better fit */
+    }
+
+    .slider-images img {
+        width: 80%; /* Adjust image width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure image doesn't stretch */
+        border-radius: 50%; /* Maintain circular shape */
+    }
+
+    .dot-indicators {
+        bottom: 5px; /* Adjust position of dots closer to the image */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-img {
+        width: 100%;
+    }
+
+    .slider-container {
+        width: 95%; /* Slightly reduce width on very small screens */
+    }
+
+    .slider-images img {
+        width: 100%; /* Ensure image covers the width properly on small screens */
+        border-radius: 50%; /* Keep the circular shape */
+        object-fit: cover; /* Prevent image stretching */
+    }
+
+    .dot-indicators {
+        bottom: 5px; /* Adjust the bottom space for dots */
+    }
+}
+
 
 .home-content p{
     font-size: 1.5rem;
@@ -248,7 +341,7 @@ span{
 
 .contextbtn a:first-child {
     background: rgba(255, 255, 255, 0.4);
-    color: darkorange;
+    color: #FF6D00;
 
 }
 
@@ -264,7 +357,7 @@ span{
 
 .contextbtn a:last-child:hover {
     background: rgba(255, 255, 255, 0.4);
-    color: darkorange; 
+    color: FF6D00; 
     border: 2px solid orange; 
 }
 
@@ -408,7 +501,7 @@ span{
     .social-icons {
         flex-direction: column;
         justify-content: center; 
-        right: 5%; 
+        right: 2%; 
         padding: 2px;
     }
 
@@ -604,6 +697,9 @@ span{
 .message, .feedb {
     margin-top: 40px;
 }
+.feedb {
+    cursor: pointer;
+}
 
 .bf { 
     margin: 5px 0; 
@@ -646,7 +742,7 @@ span{
 .contact-form button {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f57c00;
+    background-color: #FF6D00;
     color: white;
     border: none;
     border-radius: 5px;
@@ -656,7 +752,7 @@ span{
 }
 
 .contact-form button:hover {
-    background-color: darkorange; 
+    background-color: #C64E00; 
 }
 
 @media (max-width: 768px) {
@@ -819,7 +915,7 @@ span{
     }
 
     .cuisine-item {
-        width: 32%;
+        width: 45%;
         height: 250px; 
     }
 
@@ -841,11 +937,11 @@ span{
     }
 
     #prevButton {
-        left: 5%; 
+        left: 8%; 
     }
 
     #nextButton {
-        right: 5%;
+        right: 8%;
     }
 
     .close {
@@ -993,11 +1089,11 @@ section{
     .video-grid {
         justify-content: center;  
         flex-wrap: wrap;           
-        gap: 20px;                
+        gap: 10px;                
     }
 
     .video-item {
-        width: calc(50% - 10px); 
+        width: calc(45% - 10px); 
         height: auto;            
         box-shadow: none;        
     }
@@ -1008,7 +1104,98 @@ section{
 }
 
 
+/* Feedback Section */
+.feedback-section {
+    background-color: orange; /* White background for feedback section */
+    padding: 4rem 10%;
+    min-height: 100vh;
+}
 
+.feedback-section h2 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+}
+
+.feedback-section p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    font-size: 1.4rem;
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: darkorange;
+}
+
+.submit-btn {
+    padding: 1rem 3rem;
+    background-color:#FF6D00;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+}
+
+.submit-btn:hover {
+    background-color:  #C64E00;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .feedback-section {
+        padding: 3rem 5%;
+    }
+
+    .feedback-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.3rem;
+    }
+
+    .submit-btn {
+        font-size: 1.4rem;
+    }
+}
 
 
 
