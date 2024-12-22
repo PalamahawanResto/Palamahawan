@@ -34,6 +34,7 @@ body{
     z-index: 5;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    height: 110px;
 }
 
 .logo img{
@@ -41,7 +42,6 @@ body{
     cursor: pointer;
     margin:  0;
 }
-
 
 
 
@@ -138,7 +138,7 @@ body{
     color: rgb(253, 114, 31);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {      
     .navbar {
         display: none;
     }
@@ -155,8 +155,7 @@ section {
     gap: 5em;
     color: white;
     padding: 50px;
-    justify-content: space-between;
-   
+    justify-content: space-between;   
     position: relative;
     overflow: hidden;
     padding-top: 80px;     
@@ -365,7 +364,7 @@ section {
 
     /* Content styles */
     .home-content {
-        width: 95%; /* Ensure content takes up most of the screen */
+        width: 100%; /* Ensure content takes up most of the screen */
         text-align: center;
         align-items: center;
     
@@ -379,11 +378,16 @@ section {
     .right-image {
         display: none; /* Hide the image on smaller screens */
     }
-
+    .contextbtn {
+        display: flex; /* Align buttons horizontally */
+        justify-content: center; /* Center the buttons horizontally */
+        gap: 10px; /* Add space between buttons */
+        margin-top: 20px; /* Optional: space between the heading and buttons */
+    }
     /* Button styles */
     .contextbtn a {
-        font-size: 20px;
-        padding: 10px 20px;
+        font-size: 15px;
+        padding: 8px 17px;
     }
 }
 
@@ -523,6 +527,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    #feature {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .home-container {
         margin-top: 50px;
     }
@@ -1252,11 +1260,6 @@ iframe:hover {
     width: 200px; /* Adjust width as needed */
 }
 
-
-
-
-
-
 /* Optional: Add a shadow effect for the dropdown */
 #category-select:hover {
     box-shadow: 0 0 10px orange;
@@ -1311,8 +1314,11 @@ iframe:hover {
 
 /* Responsive Styles for Screens 480px and Below */
 @media (max-width: 480px) {
+    .image-display {
+        padding-left: 0;
+    }
     .image-list {
-        grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+        grid-template-columns: repeat(2, 1fr); /* 3 images per row */
         grid-gap: 15px; /* Adjust space between images */
     }
 
@@ -1479,18 +1485,37 @@ iframe:hover {
     }
 
     .video-item iframe {
-        height: 370px;          
+        height: 370px;
+        object-fit: cover;          
     }
     .video-container h2{
         font-size: 30px;
     }
 }
-@media (max-width: 480px) {   
-    .video-item iframe {
-        height: 350px;          
+@media (max-width: 480px) {
+    .video-grid {
+        display: flex;           /* Ensure the container uses flexbox */
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;     /* Center align items */
+        gap: 10px;               /* Add space between the videos */
     }
 
+    .video-item {
+        width: 100%;              /* Make the videos take up most of the screen width */
+        height: auto;            /* Allow the height to adjust automatically */
+        box-shadow: none;        /* Optional: remove shadow on small screens */
+    }
+
+    .video-item iframe {
+        height: 400px;           /* Set a fixed height for the iframe on small screens */
+        object-fit: cover;
+    }
+
+    .video-container h2 {
+        font-size: 30px;         /* Adjust the font size for the heading */
+    }
 }
+
 
 /* gallery images */
 .customer-features {
@@ -1622,8 +1647,8 @@ iframe:hover {
 
 @media (max-width: 480px) {
     .feature-item {
-        width: 200px; /* 3 items per row with some gap */
-        height: 200px; /* Maintain fixed height for consistency */
+        width: 150px;
+        height: 150px;
     }
 }
 
