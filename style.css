@@ -47,12 +47,13 @@ body{
 
 
 .navbar a{
-    font-size: 20px;
+    font-size: 21px;
     color: white;
     margin-left: 30px;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;   
+    padding: 0px 18px 0px;
 }
 
 .navbar a:hover,
@@ -253,9 +254,27 @@ section {
 .home-content h1{
     font-size: 70px;
     font-weight: 700;
-    margin-top: 1.5rem;
     line-height: 1;
     color: rgb(110, 50, 12);
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.home-content h2{
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+    color: rgb(154, 62, 6);
 }
 
 
@@ -922,7 +941,7 @@ section {
 .contact-info h3 {
     font-size: 30px; 
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 .contact-info p {
@@ -937,21 +956,7 @@ section {
     font-size: 18px; 
     transition: color 0.3s ease;
 }
-#fbclick {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #FF6D00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 18px;
-}
-#fbclick:hover {
-    
-    background-color: #C64E00;
-}
+
 
 .contact-info a:hover {
     color: #0c47a1; 
@@ -963,16 +968,9 @@ section {
   
 }
 
-.feedb {
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-.feedb {
-    cursor: pointer;
-    
-}
+
 .message {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .bf { 
     margin: 5px 0; 
@@ -1219,6 +1217,7 @@ iframe:hover {
 }
 
 /* Image display area */
+/* Image display area */
 .image-display {
     flex: 1;
     padding-left: 20px;
@@ -1226,14 +1225,13 @@ iframe:hover {
     display: block;
 }
 
-/* Image list styling */
-/* Image list styling */
 .image-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 images in a row */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* auto-fit to adjust columns dynamically */
     grid-gap: 10px; /* Space between images */
     width: 100%;
-    margin: 0 auto; /* Center the grid */
+    margin: 0 auto; /* Center the grid container */
+    justify-content: center;
 }
 
 /* Image item style */
@@ -1250,11 +1248,13 @@ iframe:hover {
     width: 100%; /* Ensure each item fits within the grid column */
 }
 
+/* Image item specific adjustments */
 .image-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
+
 
 
 /* CSS for images in the Menu List */
