@@ -60,7 +60,7 @@ body{
 .navbar a.active{
     color: rgb(253, 114, 31);
     border-bottom: 3px solid rgb(253, 114, 31);
-    
+    transition: .5s;
 }
  
 /* Hamburger Icon */
@@ -387,13 +387,15 @@ section {
         text-align: center;
         align-items: center;
         padding-top: 40px;
+        gap: 20px;
     }
 
     .home-content h1 {
-        font-size: 50px; /* Adjust the font size for smaller screens */
+        font-size: 45px; /* Adjust the font size for smaller screens */
     }
-
-    /* Image styles for responsive */
+    .home-content h2{
+        font-size: 30px;
+    }   
     .right-image {
         display: none; /* Hide the image on smaller screens */
     }
@@ -588,11 +590,14 @@ section {
     display: flex;
     flex-direction: column;
     position: fixed; 
-    right: 0.5%; 
+    right: 0; 
     top: 50%; 
     transform: translateY(-50%); 
     background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow-x: auto;
@@ -610,8 +615,8 @@ section {
 
 /* Circle and icon centering */
 .social-icon {
-    width: 50px;            /* Size of the circle */
-    height: 50px;           /* Same height as width to maintain a circle */
+    width: 45px;            /* Size of the circle */
+    height: 45px;           /* Same height as width to maintain a circle */
     font-size: 30px;        /* Icon size */
     color: black;
     background-color: white;
@@ -675,7 +680,7 @@ section {
     .social-icons {
         flex-direction: column;  
         justify-content: center;  
-        right: 1%;               
+        right: 0;               
         padding: 5px;           
         padding-left: 5px;
     }
@@ -704,7 +709,7 @@ section {
 
 @media (max-width: 480px) {
     .social-icons {
-        right: 0.5%;             
+        right: 0;             
         padding: 3px;            
     
     }
@@ -1002,6 +1007,15 @@ section {
     font-size: 18px;
 }
 
+.success {
+    background: white;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 3px;
+    font-synthesis: 14px;
+    margin-top: 10px;
+}
+
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
@@ -1012,7 +1026,7 @@ section {
 }
 
 .contact-form button {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     background-color: #FF6D00;
     color: white;
