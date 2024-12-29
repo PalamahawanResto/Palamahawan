@@ -30,7 +30,7 @@ body{
 }
 @media (max-width: 768px) {
     .home {
-        background-image: url('picture/nicee.jpg'); 
+        background-image: url('picture/nicee.png'); 
     }
 }
 
@@ -407,7 +407,7 @@ section {
     }
 
     .home-content h1 {
-        font-size: 45px; /* Adjust the font size for smaller screens */
+        font-size: 42px; /* Adjust the font size for smaller screens */
     }
     .home-content h2{
         font-size: 30px;
