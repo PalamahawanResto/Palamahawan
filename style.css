@@ -271,7 +271,7 @@ section {
     font-size: 70px;
     font-weight: 700;
     line-height: 1;
-    color: rgb(110, 50, 12);
+    color: rgb(255, 98, 0);
     text-transform: uppercase;
     animation: fadeIn 2s ease-out forwards;
 }
@@ -290,7 +290,7 @@ section {
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
-    color: rgb(154, 62, 6);
+    color: rgb(255, 98, 0);
 }
 
 
