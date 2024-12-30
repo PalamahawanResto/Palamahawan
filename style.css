@@ -21,7 +21,7 @@ body{
 
 .home {
     position: relative; /* Make sure the pseudo-element is positioned correctly */
-    background-image: url('picture/nice.png'); /* Specific background for the home section */
+    background-image: url('picture/nana.jpg'); /* Specific background for the home section */
     background-size: cover; /* Ensure the image covers the section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent repetition of the image */
@@ -30,7 +30,7 @@ body{
 }
 @media (max-width: 768px) {
     .home {
-        background-image: url('picture/nicee.png'); 
+        background-image: url('picture/yaya.jpg'); 
     }
 }
 
@@ -252,6 +252,12 @@ section {
     width: 50%; 
     animation: slideUp 1.5s ease-out;
     margin-left: 5%;
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent white background */
+    border-radius: 15px; /* rounded corners */
+    backdrop-filter: blur(6px); /* blur effect for background */
+    padding: 2rem; /* space around the content */
+    padding-right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
 @keyframes slideUp {
@@ -271,9 +277,11 @@ section {
     font-size: 70px;
     font-weight: 700;
     line-height: 1;
-    color: rgb(255, 98, 0);
+    color:#FF9F00;
     text-transform: uppercase;
     animation: fadeIn 2s ease-out forwards;
+    -webkit-text-stroke: 1px #FF5F00; /* 2px border with color #FF5F00 */
+  
 }
 @keyframes fadeIn {
     0% {
@@ -290,7 +298,8 @@ section {
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
-    color: rgb(255, 98, 0);
+    color: #FF9F00;
+    -webkit-text-stroke: 1px #FF5F00;
 }
 
 
@@ -404,6 +413,9 @@ section {
         align-items: center;
         padding-top: 40px;
         gap: 20px;
+        padding-left: 0;
+        margin-left: 0;
+        
     }
 
     .home-content h1 {
