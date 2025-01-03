@@ -214,30 +214,31 @@ section {
     margin-top: 40px;
 }
 
-/* Right Image - Changing with animation and centered */
+
 .home .right-image {
-    position: absolute;
-    right: 5%; /* Position on the right side */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%); /* Correct for the vertical centering */
-    width: 40%; /* Adjust size as needed */
-    height: auto;
-    animation: rightImageChange 16s infinite; /* Sync with background change */
+      position: absolute;
+    right: 5%; 
+    top: 50%; 
+    transform: translateY(-50%);
+    
+    animation: rightImageChange 16s infinite;
 }
 
-/* Keyframes for the right image to change */
+
+
+/* slide of img */
 @keyframes rightImageChange {
     15%, 100% {
         content: url(picture/halohalo.png);
     }
     25% {
-        content: url(picture/chopsuey.png);       
+        content: url(picture/lumpiaa.png);       
     }
     50% {
-        content: url(picture/lomi.png); 
+        content: url(picture/fried.png); 
     }
     75% {
-        content: url(picture/porksinigang.png); 
+        content: url(picture/tempura.png); 
     }
 }
 
@@ -245,19 +246,14 @@ section {
 .home-content{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
     justify-content: center;
     margin-top: 3rem;
     width: 50%; 
     animation: slideUp 1.5s ease-out;
     margin-left: 5%;
-    background: rgba(255, 255, 255, 0.2); /* semi-transparent white background */
-    border-radius: 15px; /* rounded corners */
-    backdrop-filter: blur(6px); /* blur effect for background */
-    padding: 2rem; /* space around the content */
-    padding-right: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+   
 }
 
 @keyframes slideUp {
@@ -273,15 +269,13 @@ section {
 
 
 
-.home-content h1{
-    font-size: 70px;
-    font-weight: 700;
+.home-content h1{ 
+    font-size: 22px;
     line-height: 1;
-    color:#FF9F00;
+    color: white;
     text-transform: uppercase;
     animation: fadeIn 2s ease-out forwards;
-    -webkit-text-stroke: 1px #FF5F00; /* 2px border with color #FF5F00 */
-  
+    text-align: center; /* Ensure text is centered */
 }
 @keyframes fadeIn {
     0% {
@@ -298,8 +292,8 @@ section {
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
-    color: #FF9F00;
-    -webkit-text-stroke: 1px #FF5F00;
+    color: white;
+
 }
 
 
@@ -328,6 +322,7 @@ section {
     transition: 0.3s, color 0.3s;
     font-size: large; 
     margin: 0 10px;
+    font-weight: bold;
 }
 
 .contextbtn a:first-child {
@@ -380,9 +375,7 @@ section {
         padding-top: 90px;
     }
 
-    .home-content h1 {
-        font-size: 60px; /* Adjust the font size for smaller screens */
-    }
+    
 
     /* Image styles for responsive */
     .right-image {
@@ -408,21 +401,22 @@ section {
 
     /* Content styles */
     .home-content {
-        width: 100%; /* Ensure content takes up most of the screen */
+        width: 95%; /* Ensure content takes up most of the screen */
         text-align: center;
         align-items: center;
-        padding-top: 40px;
+        padding-top: 70px;
         gap: 20px;
-        padding-left: 0;
+       
         margin-left: 0;
         
     }
 
     .home-content h1 {
-        font-size: 42px; /* Adjust the font size for smaller screens */
+        font-size: 15px; /* Adjust the font size for smaller screens */
     }
     .home-content h2{
-        font-size: 30px;
+        font-size: 35px;
+        padding-top: 0;
     }   
     .right-image {
         display: none; /* Hide the image on smaller screens */

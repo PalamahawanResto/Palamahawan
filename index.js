@@ -317,3 +317,38 @@ overlay.onclick = function() {
 
 
 
+emailjs.init("DzH-rv47YKO8LddIj");
+
+function SendMail(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form data
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+
+    // Send email using EmailJS
+    emailjs.send('service_540y1o5', 'template_tac6xto', {
+        name: name,
+        email: email,
+        phone: phone,
+        subject: subject,
+        message: message
+    })
+    .then(function(response) {
+        console.log('Success:', response);
+        alert('Message sent successfully!');
+    }, function(error) {
+        console.error('Error:', error);
+        alert('Failed to send message, please try again. Error details: ' + error.text); // Enhanced error logging
+    });
+
+    // Optional: Reset the form after submission
+    document.getElementById('contact-form').reset();
+}
+
+
+
+ 
