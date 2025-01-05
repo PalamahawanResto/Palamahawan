@@ -134,7 +134,9 @@ const data = {
         { "name": "Coke 1.25", "image": "picture/drinks/coke-1.25.jpg", "price": "₱79" }, 
         { "name": "Fresh Buko", "image": "picture/drinks/freshbuko.jpg", "price": "₱49" }, 
         { "name": "Calamansi Juice", "image": "picture/drinks/calamansi.jpg", "price": "₱29" }, 
-      
+        { "name": "Redhorse", "image": "picture/drinks/redhorse.jpg", "price": "₱69" }, 
+        { "name": "San Miguel Light", "image": "picture/drinks/sanmiglight.jpg", "price": "₱69" }, 
+        { "name": "San Miguel Pale Pilsen", "image": "picture/drinks/palepilsen.png", "price": "₱69" }, 
     ],
 
 
@@ -274,15 +276,15 @@ filterByCategory('menu');
 
 
 
-//For the Img gallery modal
-// Get the modal
+//For the Img gallery & Hot deals modal
+
 var modal = document.getElementById("imageModal");
 
 // Get the modal image element
 var modalImg = document.getElementById("modalImg");
 
-// Get all images in the feature grid
-var images = document.querySelectorAll(".feature-item img");
+// Get all images in the feature gallery (Food and Gallery images)
+var images = document.querySelectorAll(".food-image, .feature-item img"); // Select both food images and gallery images
 
 // Get the "X" (close) button
 var span = document.getElementsByClassName("close")[0];
@@ -290,7 +292,7 @@ var span = document.getElementsByClassName("close")[0];
 // Get the overlay element
 var overlay = document.getElementById("modalOverlay"); // Overlay div to cover content
 
-// Loop through each image and add a click event
+// Loop through each image (both food and gallery images) and add a click event
 images.forEach(function(img) {
     img.onclick = function() {
         modal.style.display = "flex"; // Show the modal
@@ -317,38 +319,3 @@ overlay.onclick = function() {
 
 
 
-emailjs.init("DzH-rv47YKO8LddIj");
-
-function SendMail(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Get form data
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
-
-    // Send email using EmailJS
-    emailjs.send('service_540y1o5', 'template_tac6xto', {
-        name: name,
-        email: email,
-        phone: phone,
-        subject: subject,
-        message: message
-    })
-    .then(function(response) {
-        console.log('Success:', response);
-        alert('Message sent successfully!');
-    }, function(error) {
-        console.error('Error:', error);
-        alert('Failed to send message, please try again. Error details: ' + error.text); // Enhanced error logging
-    });
-
-    // Optional: Reset the form after submission
-    document.getElementById('contact-form').reset();
-}
-
-
-
- 

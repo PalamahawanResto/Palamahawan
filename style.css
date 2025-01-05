@@ -42,7 +42,7 @@ body{
     width: 100%;
     padding: 0px 40px 0px;
     padding-left: 10px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.502);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -211,7 +211,7 @@ section {
     min-height: 100vh;
     position: relative;
     transition: all 0.6s ease;
-    margin-top: 40px;
+  
 }
 
 
@@ -228,7 +228,7 @@ section {
 
 /* slide of img */
 @keyframes rightImageChange {
-    15%, 100% {
+    10%, 100% {
         content: url(picture/halohalo.png);
     }
     25% {
@@ -372,7 +372,7 @@ section {
         width: 90%; /* Ensure content takes up most of the screen */
         text-align: center;
         align-items: center;
-        padding-top: 90px;
+        padding-top: 120px;
     }
 
     
@@ -404,7 +404,7 @@ section {
         width: 95%; /* Ensure content takes up most of the screen */
         text-align: center;
         align-items: center;
-        padding-top: 70px;
+        padding-top: 100px;
         gap: 20px;
        
         margin-left: 0;
@@ -931,6 +931,50 @@ section {
         font-size: 16px; 
     }
 }
+
+/* Modal hot */
+.food-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Modal content (image) */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+}
+
+/* Close button (x) */
+.close-btn {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
                                                            
 
 /*contact*/

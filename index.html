@@ -112,10 +112,10 @@
                     <div class="food-section">
                         <h2>Check This Out!</h2>
                         <div class="food-images">
-                            <img src="picture/feature/feature1.png" alt="Dish 1">
-                            <img src="picture/feature/feature2.png" alt="Dish 2">
-                            <img src="picture/feature/feature3.png" alt="Dish 3">
-                            <img src="picture/feature/conbo.png" alt="Dish 4">
+                            <img class="food-image" src="picture/feature/feature1.png" alt="Dish 1">
+                            <img class="food-image" src="picture/feature/feature2.png" alt="Dish 2">
+                            <img class="food-image" src="picture/feature/feature3.png" alt="Dish 3">
+                            <img class="food-image" src="picture/feature/conbo.png" alt="Dish 4">
                         </div>
                         <a href="#cuisine" class="btn-to-cuisine">Explore Our Dishes</a>
                     </div>
@@ -123,9 +123,10 @@
                     <!-- Right side: Live Music Advertisement -->
                     <div class="live-music-section">
                        
-                        <img src="picture/feature/live.png" alt="Live Music Event">
+                        <img class="food-image" src="picture/feature/live.png" alt="Live Music Event">
                     </div>
                 </div>
+                
             </section>
               
      
@@ -298,32 +299,34 @@
                       
            
             </div>
-       
+            
             <div class="contact-form">
-                <form id="contact-form" onsubmit="SendMail(event)" autocomplete="on">
-                    <h2>Connect With Us & Share Your Feedback</h2>                                     
-                
+                <form id="contact-form" action="https://formspree.io/f/movvperq" method="POST" onsubmit="handleSubmit(event)"> 
+                    
+                    <h2>Connect With Us & Share Your Feedback</h2>
+                    
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name" autocomplete="name">
-                
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    
                     <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address" autocomplete="email">
-                
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    
                     <label for="phone">Your Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel">
-                
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    
                     <label for="subject">Subject (Optional)</label>
-                    <input type="text" id="subject" name="subject" placeholder="Subject of your message" autocomplete="off">
-                
+                    <input type="text" id="subject" name="subject" placeholder="Subject of your message">
+                    
                     <label for="message">Your Message</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Write your message here..." autocomplete="off"></textarea>
-                
-                    <button type="submit" name="send" value="Submit">Send Message</button>
-                </form>
-                
+                    <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+                    
+                    
+                    <button  type="submit" >Send Message</button>
+                </form>       
             </div>
-                     
-        </div>   
+             
+        </div> 
+       
      </section>
 
  <!--------- ourstore section ------------->    
@@ -342,7 +345,7 @@
         <div class="aboutcontainer">
             <div class="section">
                 <div class="resto-photo">
-                    <img src="picture/culasipic.jpg" alt="Resto" class="resto-image">
+                    <img src="picture/about/aboutimg.jpg" alt="Resto" class="resto-image">
                 </div>
                 <div class="contentabout aboutcontent">
                     <h2>About Us</h2>
@@ -362,7 +365,7 @@
                     <p>We invite you to be a part of our story, to savor our dishes, and to create memories that will last a lifetime.</p>
                     </div>
                     <div class="resto-photo">
-                        <img src="picture/jisoo.jpg" alt="Owner" class="resto-image resto">
+                        <img src="picture/about/jisoo.jpg" alt="Owner" class="resto-image resto">
                         <p>Jasmin Hanusiak</p>
                     </div>
                 </div>
@@ -419,9 +422,9 @@
         </div>
     </footer>
     
-
-     <script src="index.js"></script>
-     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  
+    <script src="index.js"></script>
+    
 
 </body>
 </html>
