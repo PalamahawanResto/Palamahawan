@@ -57,7 +57,7 @@ const data = {
     ],
     "main-dish": [
         { "name": "Chopsuey", "image": "picture/maindish/chopsuey.png", "price": "₱249" },
-        { "name": "Friedchicken", "image": "picture/maindish/fried.jpg", "price": "₱329" },
+        { "name": "Fried Chicken", "image": "picture/maindish/fried.jpg", "price": "₱329" },
         { "name": "Pork Sisig", "image": "picture/maindish/sisig.jpg", "price": "₱259" },
         { "name": "Chicken Inasal", "image": "picture/maindish/chickeninasal.jpg", "price": "₱179" },
         { "name": "Grilled Boneless Bangus", "image": "picture/maindish/grilledbangus.jpg", "price": "₱149" },      
